@@ -20,35 +20,3 @@
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>
         ;
 };
-
-
-// wannabecoffee's code
-&right_encoder {
-  status = "okay";
-};
-
-&chosen {
-  zephyr,display = &nice_view;
-};
-
-&nice_view_spi {
-  status = "okay";
-};
-
-&nice_view {
-  status = "okay";
-};
-
-&i2c0 {
-    status = "okay";
-
-    glidepoint0: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        label = "cirque_trackpad";
-        irq-gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;  // update to your INT pin
-        click-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;  // optional, if using touch-to-click
-        zephyr,priority = <90>;  // optional tuning
-        status = "okay";
-    };
-};

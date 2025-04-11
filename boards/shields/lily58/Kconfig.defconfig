@@ -1,53 +1,52 @@
-# Common Lily58 settings
+
+if SHIELD_LILY58_LEFT || SHIELD_LILY58_DONGLE_XIAO || SHIELD_LILY58_DONGLE_PRO_MICRO
+
 config ZMK_KEYBOARD_NAME
-    string
     default "Lily58"
 
-config ZMK_SPLIT
-    bool
+config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    bool
-    default y if SHIELD_LILY58_LEFT || SHIELD_LILY58_DONGLE_XIAO || SHIELD_LILY58_DONGLE_PRO_MICRO
+endif
 
-# Display-related settings
+if SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT || SHIELD_LILY58_LEFT_PERIPHERAL || SHIELD_LILY58_DONGLE_XIAO || SHIELD_LILY58_DONGLE_PRO_MICRO
+
+config ZMK_SPLIT
+    default y
+
+if ZMK_DISPLAY
+
 config I2C
-    bool
-    default y if ZMK_DISPLAY
+    default y
 
 config SSD1306
-    bool
-    default y if ZMK_DISPLAY
+    default y
+
+if SHIELD_LILY58_DONGLE_XIAO || SHIELD_LILY58_DONGLE_PRO_MICRO
 
 choice ZMK_DISPLAY_WORK_QUEUE
     default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
-    depends on ZMK_DISPLAY && (SHIELD_LILY58_DONGLE_XIAO || SHIELD_LILY58_DONGLE_PRO_MICRO)
 endchoice
 
-# LVGL display settings
+endif
+
+endif # ZMK_DISPLAY
+
+if LVGL
+
 config LV_Z_VDB_SIZE
-    int
-    default 64 if LVGL
+    default 64
 
 config LV_DPI_DEF
-    int
-    default 148 if LVGL
+    default 148
 
 config LV_Z_BITS_PER_PIXEL
-    int
-    default 1 if LVGL
+    default 1
 
 choice LV_COLOR_DEPTH
     default LV_COLOR_DEPTH_1
-    depends on LVGL
 endchoice
 
-# Cirque GlidePoint trackpad support
-config INPUT_PINNACLE
-    bool
-    default y
+endif # LVGL
 
-config ZMK_POINTING
-    bool
-    default y
+endif

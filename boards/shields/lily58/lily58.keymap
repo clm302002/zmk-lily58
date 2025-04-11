@@ -8,8 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
-// this line was me adding it copying from wannabecoffeenerd's setup.  
-#include <dt-bindings/zmk/mouse.h>
 
 / {
     keymap {

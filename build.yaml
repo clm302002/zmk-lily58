@@ -56,20 +56,14 @@ include:
   ### LILY58 START ###
   # nice!oled lily58
   - board: nice_nano_v2
-    shield: lily58_left nice_oled
+    shield: lily58_left nice_oled cirque_adapter_left
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"lily58_Oled\"  -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: nice_lily58_left_oled
     snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
-    shield: lily58_right nice_oled
+    shield: lily58_right nice_oled cirque_adapter_right
     cmake-args: -DCONFIG_ZMK_SLEEP=y -DCONFIG_ZMK_IDLE_TIMEOUT=60000
     artifact-name: nice_lily58_right_oled
-### This is for the cirque touchpad
-include:
-  - board: nice_nano_v2
-    shield: lily58_left cirque_adapter_left
-  - board: nice_nano_v2
-    shield: lily58_right cirque_adapter_right
 
   # peripheral_left
   # - board: nice_nano_v2

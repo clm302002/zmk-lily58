@@ -12,10 +12,10 @@ manifest:
     - name: badjeff
       url-base: https://github.com/badjeff
   projects:
-    # - name: zmk
-      # remote: zmkfirmware
-      # revision: main
-      # import: app/west.yml
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
     # support nice_oled and nice_epaper
     - name: zmk-nice-oled
       remote: mctechnology17
@@ -28,10 +28,10 @@ manifest:
       # remote: mctechnology17
       # revision: main
 ###  section for cirque with badjeff
-    - name: zmk
-      remote: badjeff
-      revision: feat/pointers-move-scroll
-      import: app/west.yml
+    # - name: zmk
+      # remote: badjeff
+      # revision: feat/pointers-move-scroll
+      # import: app/west.yml
     - name: zmk-adns9800-driver
       remote: badjeff
       revision: main

@@ -9,6 +9,10 @@ manifest:
     #petejohanson is a ZMK dev
     - name: petejohanson
       url-base: https://github.com/petejohanson
+    #pm0u refrences pete for the cirque trackpad
+    - name: pm0u
+      url-base: https://github.com/pm0u
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -22,5 +26,10 @@ manifest:
     - name: cirque-input-module
       remote: petejohanson
       revision: main
+    #pm0u cirque section that uses pete
+    - name: glidepoint_i2c
+      remote: pm0u
+      revision: main
+      path: modules/glidepoint_i2c
   self:
     path: config

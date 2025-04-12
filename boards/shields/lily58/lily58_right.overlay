@@ -20,14 +20,3 @@
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>
         ;
 };
-
-/ {
-    chosen {
-        zephyr,display = &dummy_display;
-    };
-
-    dummy_display: dummy_display@0 {
-        compatible = "zephyr,dummy-display";
-        status = "okay";
-    };
-};
